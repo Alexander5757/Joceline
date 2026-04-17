@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra Historia ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{
+ margin:0;
+ font-family:'Poppins',sans-serif;
+ background:linear-gradient(135deg,#ff758c,#ff7eb3);
+ overflow-x:hidden;
+ color:#fff;
+}
+header{
+ text-align:center;
+ padding:50px 20px;
+}
+header h1{
+ font-family:'Pacifico',cursive;
+ font-size:3em;
+}
+header p{font-size:1.2em}
+.container{max-width:900px;margin:auto;padding:20px}
+.day{
+ background:rgba(255,255,255,0.1);
+ backdrop-filter:blur(10px);
+ border-radius:20px;
+ padding:20px;
+ margin:20px 0;
+ box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+ gap:10px;
+ margin-top:20px;
+}
+.gallery img{
+ width:100%;
+ border-radius:15px;
+ transition:.3s;
+}
+.gallery img:hover{transform:scale(1.1)}
+button{
+ display:block;
+ margin:40px auto;
+ padding:15px 25px;
+ border:none;
+ border-radius:30px;
+ background:#fff;
+ color:#ff4d6d;
+ cursor:pointer;
+}
+#mensaje{display:none;text-align:center;font-size:1.5em}
+footer{text-align:center;padding:30px}
+.heart{position:fixed;width:20px;height:20px;background:red;transform:rotate(45deg);animation:float 6s linear infinite}
+.heart::before,.heart::after{content:'';position:absolute;width:20px;height:20px;background:red;border-radius:50%}
+.heart::before{top:-10px}
+.heart::after{left:-10px}
+@keyframes float{0%{transform:translateY(100vh) rotate(45deg)}100%{transform:translateY(-10vh) rotate(45deg)}}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+<source src="https://www.youtube.com/watch?v=OPugs48z2GU&list=RDOPugs48z2GU&start_radio=1" type="audio/mpeg">
+</audio>
+
+<header>
+<h1>💖 Joceline Cherrez 💖</h1>
+<p>Desde el 21/12/2023 ❤️</p>
+<p id="contador"></p>
+<p>Siempre pensando en ti </p>
+</header>
+
+<div class="container">
+
+<div class="day">
+<h2>Lunes</h2>
+<p>Pase extrañandote dándolo todo desde temprano, dí mis examenes
+    creo que me fue bien, regrese a mi casa almorce pase viendo el techo
+    pensando en la tarde solo estudie y almorce y traka ❤️</p>
+</div>
+
+<div class="day">
+<h2>Martes</h2>
+<p>Se me hace mas dificil estar concentrado sin ver mi teléfono y esperar
+    tu mensaje, seguí dando trabajo y pruebas finales llegue a la casirris
+    almorce baje al centro a comprar un cargador para una computadora 
+    volvi a mi casa y me pase estudiando y pensado
+</p>
+</div>
+
+<div class="day">
+<h2>Miércoles</h2>
+<p>Hoy si me sentí más acabado no di pie con bola en la prueba me fue pésimo
+    como no haber estado, la siguiente clase igual pase concentrandome 
+    llegue a la coneja le dio 2 ataques pase con ella después de almorzar
+    nos quedamos dormidos y me desperte y seguí estudiando que mañana doy
+    el último examen creo que estoy bien en todo dentro de lo que cabe me duele
+    mucho no tener contacto en los momentos feos 
+    (me confirmo el daniel y la belen ya para la semifinal)
+</p>
+</div>
+
+<div class="day">
+<h2>Jueves</h2>
+<p>Hoy me fue mejor creo yo, tuve 3 horas de examen que increible, llegue a casa
+    almorce y subi a repasar con el daniel hoy hicimos bachata estoy tratando de 
+    hacerles lo mejor posible baje a la casirris antes de que me caiga el aguacero
+    y ya estoy aqui manteniendo mi mente ocupada y ya nació el bebe de mi prima
+    y eso 
+</p>
+</div>
+
+<h2 style="text-align:center">📸 Como me he sentido</h2>
+<div class="gallery">
+<img src="Nueva carpeta/91125c867851ece356642b030aee8f50.jpg">
+<img src="Nueva carpeta/a8f6275b8e2fa68c929aafd02c102d12.jpg">
+<img src="Nueva carpeta/askñl.PNG">
+</div>
+
+<button onclick="mostrarMensaje()">💌 Ábreme 💌</button>
+<div id="mensaje">El viernes vamos a vernos? o tal vez prefieras
+    ver una pelicula por discord? o tal vez ir al cumple del mauro 
+    me encantaría pasar tiempo contigo, 
+    aunque sea haciendo alguna cosa.
+</div>
+
+</div>
+
+<footer>
+<p>Te amo 💕</p>
+</footer>
+
+<script>
+function createHeart(){
+ const heart=document.createElement('div');
+ heart.classList.add('heart');
+ heart.style.left=Math.random()*100+'vw';
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,300);
+
+function mostrarMensaje(){
+ document.getElementById('mensaje').style.display='block';
+}
+
+// contador
+const inicio=new Date("2023-12-21"); 
+function actualizar(){
+ const ahora=new Date();
+ const diff=ahora-inicio;
+ const dias=Math.floor(diff/(1000*60*60*24));
+ document.getElementById("contador").innerText="Llevamos "+dias+" días juntos 💖";
+}
+setInterval(actualizar,1000);
+actualizar();
+</script>
+
+</body>
+</html>
